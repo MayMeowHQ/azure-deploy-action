@@ -1,0 +1,20 @@
+name: "Azure deploy action"\
+description: "Deploy static site to Azure storage"
+author: "MayMeow"
+inputs:
+  azure_connection_string:
+    description: "Azure connection string with write access"
+    required: true
+  source_dir:
+    description: 'Set an input directory for deployment.'
+    required: false
+    default: 'public'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    AZ_STORAGE_CONNECTION_STRING: ${{ inputs.azure_connection_string }}
+    STATIC_SITE_PATH: ${{ inputs.source_dir }}
+branding:
+  icon: 'upload-cloud'
+  color: 'blue'
