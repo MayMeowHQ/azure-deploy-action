@@ -1,9 +1,9 @@
-name: "Azure deploy action"\
-description: "Deploy static site to Azure storage"
-author: "MayMeow"
+name: 'Azure deploy action'
+description: 'Deploy static site to Azure storage'
+author: 'MayMeow'
 inputs:
   azure_connection_string:
-    description: "Azure connection string with write access"
+    description: 'Azure connection string with write access'
     required: true
   source_dir:
     description: 'Set an input directory for deployment.'
